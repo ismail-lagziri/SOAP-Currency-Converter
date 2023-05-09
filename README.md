@@ -7,30 +7,19 @@ This repository contains a SOAP-based Currency Converter API implemented in Java
 To test the service, you can use SOAPUI, a popular tool for testing SOAP-based web services. Follow the steps below to set up the SOAPUI project and make requests to the Currency Converter API.
 
 1. Download and install SOAPUI from the official website: [https://www.soapui.org/downloads/soapui/](https://www.soapui.org/downloads/soapui/)
-
 2. Launch SOAPUI and create a new project.
-
 3. Set the project name and choose the appropriate workspace directory.
-
 4. Click on "Create" to create the new project.
-
 5. Right-click on the project and select "Add WSDL."
-
 6. Enter the WSDL URL for the Currency Converter API: `http://localhost:8585/currencyConverter?wsdl`
-
 7. SOAPUI will fetch the WSDL and generate the service and its operations.
-
 8. Expand the CurrencyConverterService node in the project tree to view the available operations.
-
 9. To test the `convert` operation, right-click on it and select "Add to Request 1."
-
 10. Fill in the input parameters:
     - `fromCurrency`: The currency code to convert from (e.g., USD)
     - `toCurrency`: The currency code to convert to (e.g., EUR)
     - `amount`: The amount to convert
-
 11. Click on the green play button to send the request to the Currency Converter API.
-
 12. SOAPUI will display the response, which includes the converted amount and the exchange rate used.
 
 ![SOAPUI Screenshot](images/soapui_screenshot.png)
