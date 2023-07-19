@@ -17,7 +17,7 @@ import util.Transaction;
 
 @WebService(endpointInterface = "api.CurrencyConverterService")
 public class CurrencyConverterServiceImpl implements CurrencyConverterService {
-    private CurrencyConverterCache cache;
+    CurrencyConverterCache cache;
 
     public CurrencyConverterServiceImpl() {
         this.cache = CurrencyConverterCache.getInstance();
