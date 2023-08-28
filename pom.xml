@@ -1,13 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>ma.ac.esi</groupId>
-  <artifactId>CurrencyConverterTest</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ma.ac.esi</groupId>
+    <artifactId>CurrencyConverterTest</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
+        <!-- Your existing dependencies -->
+
         <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
@@ -17,26 +21,50 @@
         </dependency>
         
         <!-- https://mvnrepository.com/artifact/junit/junit -->
-		<dependency>
-    		<groupId>junit</groupId>
-    		<artifactId>junit</artifactId>
-    		<version>4.13.2</version>
-    		<scope>test</scope>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-		<dependency>
-    		<groupId>org.mockito</groupId>
-    		<artifactId>mockito-core</artifactId>
-    		<version>5.3.1</version>
-    		<scope>test</scope>
-		</dependency>
-		
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
-  			<groupId>org.json</groupId>
-  			<artifactId>json</artifactId>
-  			<version>20210307</version>
-		</dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>start-application</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>pre-integration-test</phase>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>target/CurrencyConverterTest-0.0.1-SNAPSHOT.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
